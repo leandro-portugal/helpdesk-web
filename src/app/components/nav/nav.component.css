@@ -6,7 +6,7 @@
     border-right: solid 0.0625rem #CCC;
     width: 13rem;
     color: #FFF;
-    background: rgb(112,128,144);
+    background: rgb(138,120,232);
     
 }
 
@@ -14,14 +14,14 @@
     margin-left: 0.625rem;
     margin-top: 0.625rem;
     color: #FFF;
-    background: rgb(112,128,144);
+    background: rgb(138,120,232);
     
 }
 
 img{
-    width: 100%;
+    width: 90%;
     height: 7rem;
-    margin: .8rem auto 1rem auto;
+    margin: .8rem .5rem .2rem .5rem;
 }
 
 .sidenav a{

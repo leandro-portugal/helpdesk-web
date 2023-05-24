@@ -1,6 +1,9 @@
 .card{
     width: 90%;
-    margin: auto;
+    margin: 1rem auto 1rem auto;
+    border: 0.0625rem solid rgb(138,120,232);
+    border-radius: 2rem;
+
 
 }
 
