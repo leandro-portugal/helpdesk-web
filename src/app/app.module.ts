@@ -25,6 +25,7 @@ import {MatTableModule} from '@angular/material/table';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TechnicalListComponent } from './components/technical/technical-list/technical-list.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { HeaderComponent } from './components/header/header.component';
     AppComponent,
     NavComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    TechnicalListComponent
   ],
   imports: [
     BrowserModule,
