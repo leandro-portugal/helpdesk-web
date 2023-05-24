@@ -15,10 +15,6 @@ This is a ticket management system that simulates a simple Help Desk application
 - JWT (JSON Web Tokens)
 - Angular Material components
 
-## Screenshots
-![Help Desk Screenshot](https://i.ibb.co/hLrV48r/helpdesk.png)
-
-
 ## Backend Repository
 The backend source code can be found in the following repository: [Backend Repository](https://github.com/leandro-portugal/helpdesk-api)
 
