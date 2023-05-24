@@ -1,27 +1,41 @@
-# Helpdesk
+# Help Desk Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
+This is a ticket management system that simulates a simple Help Desk application developed using Angular 12 and Spring Boot 3. The system is deployed in the cloud, with the frontend hosted on the Vercel platform and the backend on Azure. The main objective of this project is to cover the concepts of Single-Page Applications (SPAs), authentication, and authorization using JWT tokens.
 
-## Development server
+## Features
+- User authentication and authorization
+- Ticket creation, editing, and resolution
+- User role management
+- Ticket assignment to specific users
+- Ticket search and filtering
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Technologies Used
+- Angular 12
+- Spring Boot 3
+- JWT (JSON Web Tokens)
+- Angular Material components
 
-## Code scaffolding
+## Screenshots
+![Help Desk Screenshot](https://i.ibb.co/hLrV48r/helpdesk.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Backend Repository
+The backend source code can be found in the following repository: [Backend Repository](https://github.com/leandro-portugal/helpdesk-api)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation and Usage
+To run this project locally, follow these steps:
 
-## Running unit tests
+1. Clone the repository.
+2. Set up the backend by following the instructions in the backend repository.
+3. Install the necessary dependencies by running `npm install` in the frontend directory.
+4. Start the frontend server by running `ng serve` in the frontend directory.
+5. Access the application by navigating to `http://localhost:4200` in your web browser.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Contributors
 
-## Running end-to-end tests
+This system is developed and maintained by the following contributors:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- [Leandro Portugal](https://github.com/leandro-portugal)
 
-## Further help
+Please feel free to contribute by submitting bug reports, feature requests, or pull requests to this repository.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
