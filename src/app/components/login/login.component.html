@@ -7,14 +7,14 @@
         
         <mat-form-field class="full-width" appearance="standard">
           <mat-label>E-mail</mat-label>
-          <input matInput placeholder="JohnDoe@mail.com">
+          <input [formControl]="email" required [(ngModel)]="credentials.email" name="email"  matInput placeholder="JohnDoe@mail.com">
         </mat-form-field>
 
         <mat-form-field class="full-width rounded" appearance="standard">
             <mat-label>Senha</mat-label>
-            <input type="password" matInput placeholder="abc123">
+            <input  [formControl]="password" required [(ngModel)]="credentials.password" name="password" type="password" matInput placeholder="abc123">
           </mat-form-field>
-          <button class="full-width" mat-flat-button color="primary">Entrar</button>
+          <button [disabled]="!validateFields()" class="full-width" mat-flat-button color="primary">Entrar</button>
         
       </form>
       
