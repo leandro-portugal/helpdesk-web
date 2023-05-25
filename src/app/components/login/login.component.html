@@ -14,7 +14,7 @@
             <mat-label>Senha</mat-label>
             <input  [formControl]="password" required [(ngModel)]="credentials.password" name="password" type="password" matInput placeholder="abc123">
           </mat-form-field>
-          <button [disabled]="!validateFields()" class="full-width" mat-flat-button color="primary">Entrar</button>
+          <button (click)="login()" [disabled]="!validateFields()" class="full-width" mat-flat-button color="primary">Entrar</button>
         
       </form>
       
