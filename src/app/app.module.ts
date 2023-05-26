@@ -28,6 +28,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TechnicalListComponent } from './components/technical/technical-list/technical-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
+import { authInterceptorProviders } from './interceptors/auth.interceptor';
 
 
 
@@ -67,7 +68,7 @@ import { ToastrModule } from 'ngx-toastr';
       progressBar: true,
     })
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
