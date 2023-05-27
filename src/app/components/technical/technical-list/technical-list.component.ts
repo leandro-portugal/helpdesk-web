@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { technical } from 'src/app/models/technical';
+import { Technical } from 'src/app/models/technical';
+import { TechnicalService } from 'src/app/services/technical.service';
 
 @Component({
   selector: 'app-technical-list',
@@ -10,31 +11,33 @@ import { technical } from 'src/app/models/technical';
 })
 export class TechnicalListComponent implements OnInit {
 
-  ELEMENT_DATA: technical[]=[
-    {
-      id: 1,
-      name: 'Juan Perez',
-      document: '12345678910',
-      email: 'juanperez@mail.com',
-      password: 'XXXXXX',
-      profiles:['admin'],
-      creationDate:'24/05/2023',
-    }
-  ]
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  displayedColumns: string[] = ['position', 'name', 'document', 'email', 'actions'];
-  dataSource = new MatTableDataSource<technical>(this.ELEMENT_DATA);
+  ELEMENT_DATA: Technical[]=[ ]
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+  constructor( private service: TechnicalService) { }
+
+  ngOnInit(): void {
+    this.findAll();
+  
   }
 
+  displayedColumns: string[] = ['position', 'name', 'document', 'email', 'actions'];
+  dataSource = new MatTableDataSource<Technical>(this.ELEMENT_DATA);
+
+
+  findAll(){
+    this.service.findAll().subscribe(response => {
+      this.ELEMENT_DATA = response;
+      this.dataSource = new MatTableDataSource<Technical>(response);
+      this.dataSource.paginator = this.paginator;
+    
+    });
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }
 

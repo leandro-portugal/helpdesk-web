@@ -1,4 +1,4 @@
-export interface technical{
+export interface Technical{
     
     id?: any;
     name: string;

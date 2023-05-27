@@ -1,4 +1,10 @@
 <div class="container">
+  <mat-form-field appearance="standard">
+    <mat-label>Buscar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. João Goulart" #input>
+  </mat-form-field>
+
+  <button mat-stroked-button color="primary">Novo Técnico</button>
     <div class="mat-elevation-z4">
         <table mat-table [dataSource]="dataSource">
       

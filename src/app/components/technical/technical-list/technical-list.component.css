@@ -6,3 +6,16 @@
 table {
     width: 100%;
   }
+
+  mat-form-field{
+    width: 50%;
+    margin-right: 38%;
+  }
+
+  mat-label{
+    font-size: 1rem;
+  }
+
+  button{
+    border-radius: 3rem;
+  }
