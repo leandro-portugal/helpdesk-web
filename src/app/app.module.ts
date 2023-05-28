@@ -29,6 +29,9 @@ import { TechnicalListComponent } from './components/technical/technical-list/te
 import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { authInterceptorProviders } from './interceptors/auth.interceptor';
+import { TechnicalCreateComponent } from './components/technical-create/technical-create.component';
+import { NgxMaskModule } from 'ngx-mask';
+
 
 
 
@@ -39,7 +42,8 @@ import { authInterceptorProviders } from './interceptors/auth.interceptor';
     HomeComponent,
     HeaderComponent,
     TechnicalListComponent,
-    LoginComponent
+    LoginComponent,
+    TechnicalCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,8 @@ import { authInterceptorProviders } from './interceptors/auth.interceptor';
       timeOut: 5000,
       closeButton: true,
       progressBar: true,
-    })
+    }),
+    NgxMaskModule.forRoot()
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
