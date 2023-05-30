@@ -1,17 +1,41 @@
-.container{
+.container {
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgb(138,120,232);
-}
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: rgb(138, 120, 232);
+  }
 
+  .left-div {
+    flex: 1;
+    min-width: 200px;
+    margin: auto;
+  }
+
+  .right-div {
+    flex: 1;
+    min-width: 200px;
+    margin: auto;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      height: auto;
+      padding-top: 0;
+    }
+
+    .left-div,
+    .right-div {
+      min-width: auto;
+      margin: 1rem auto;
+    }
+  }
 .form{
     width: 20rem;
-    background-color: #FFF;
+    background-color: rgb(255, 255, 255);
     margin: auto;
     padding: 4rem 1rem;
-    border-radius: 1rem;
+    border-radius: .25rem;
 }
 
 .full-width{
@@ -19,7 +43,7 @@
     
 }
 
-img{
+.logo-login{
     width: 15rem;
     height: 10rem;
     margin-right: 2.5rem;
@@ -27,8 +51,17 @@ img{
 }
 
 button{
-    border-radius: 3rem;
+    border-radius: .25rem;
     margin-top: 1rem;
+    background: rgb(138,120,232);
+    color: rgb(255, 255, 255);
     
 }
 
+mat-label{
+    color: rgb(138,120,232);
+}
+
+input{
+    color: rgb(138,120,232);
+}
