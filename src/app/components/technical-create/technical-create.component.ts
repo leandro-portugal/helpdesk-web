@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Technical } from 'src/app/models/technical';
 import { TechnicalService } from 'src/app/services/technical.service';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-technical-create',
@@ -20,7 +21,6 @@ export class TechnicalCreateComponent implements OnInit {
     document: '',
     creationDate: '',
     profiles: []
-    
   }
 
   admin: boolean = false;
@@ -32,18 +32,15 @@ export class TechnicalCreateComponent implements OnInit {
   password: FormControl = new FormControl(null, Validators.minLength(6));
   document: FormControl = new FormControl(null, Validators.required);
 
-  
-
-  constructor(private service: TechnicalService, private toastr: ToastrService, private router:  Router) { }
+  constructor(private service: TechnicalService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  
   create(): void {
-
     
- 
+    this.technical.creationDate = moment().format('DD/MM/YYYY');
+
     this.service.create(this.technical).subscribe(() => {
       this.toastr.success('Técnico cadastrado com sucesso', 'Cadastro');
       this.router.navigate(['/technicals']);
