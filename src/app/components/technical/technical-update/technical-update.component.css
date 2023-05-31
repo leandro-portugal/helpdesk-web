@@ -1,0 +1,48 @@
+.card {
+    width: 80%;
+    margin: 0 auto 1rem;
+    padding: 1rem;
+    border-radius: .25rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .div-left {
+    flex: 2;
+    margin: auto;
+  }
+  
+  .div-right {
+    flex: 2;
+    margin: auto;
+  }
+  
+
+.fullWith{
+    width: 100%;
+}
+.section{
+    display: flex;
+    justify-content: space-evenly;
+    height: 1rem;
+    margin-bottom: 0.625rem;
+}
+img{
+    height: 20rem;
+    width: 20rem;
+
+}
+
+h1{
+    text-align: center;
+    height: 1rem;
+}
+button{
+    margin-bottom: .5rem;
+    margin-right: 1rem;
+    border-radius: .25rem;
+}
+
+.icon{
+    color: rgb(138,120,232);
+}

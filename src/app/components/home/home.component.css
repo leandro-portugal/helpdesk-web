@@ -1,11 +1,22 @@
-.card{
-    width: 90%;
-    margin: 1rem auto 1rem auto;
-    border: 0.0625rem solid rgb(138,120,232);
-    border-radius: 2rem;
-
-}
+.card {
+    width: 80%;
+    margin: 0 auto 1rem;
+    padding: 1rem;
+    border-radius: .25rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .left-div {
+    flex: 2;
+    margin: auto;
+  }
+  
+  .right-div {
+    flex: 2;
+    margin: auto;
+  }
 
 img{
-    height: 15rem;
+    height: 20rem;
 }
