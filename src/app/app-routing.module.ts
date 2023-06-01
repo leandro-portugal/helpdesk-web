@@ -8,6 +8,10 @@ import { AuthGuard } from './auth/auth.guard';
 import { TechnicalCreateComponent } from './components/technical/technical-create/technical-create.component';
 import { TechnicalUpdateComponent } from './components/technical/technical-update/technical-update.component';
 import { TechnicalDeleteComponent } from './components/technical/technical-delete/technical-delete.component';
+import { CustomerListComponent } from './components/customer/customer-list/customer-list.component';
+import { CustomerCreateComponent } from './components/customer/customer-create/customer-create.component';
+import { CustomerUpdateComponent } from './components/customer/customer-update/customer-update.component';
+import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
 
 const routes: Routes = [
    {
@@ -20,7 +24,12 @@ const routes: Routes = [
       { path: 'technicals', component: TechnicalListComponent},
       { path: 'technicals/register', component: TechnicalCreateComponent},
       { path: 'technicals/update/:id', component: TechnicalUpdateComponent},
-      {path: 'technicals/delete/:id', component: TechnicalDeleteComponent}
+      {path: 'technicals/delete/:id', component: TechnicalDeleteComponent},
+
+      { path: 'customers', component: CustomerListComponent},
+      { path: 'customers/register', component: CustomerCreateComponent},
+      { path: 'customers/update/:id', component: CustomerUpdateComponent},
+      {path: 'customers/delete/:id', component: CustomerDeleteComponent}
     ]
    }
    
