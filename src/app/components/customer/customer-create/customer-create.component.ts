@@ -23,9 +23,7 @@ export class CustomerCreateComponent implements OnInit {
     profiles: []
   }
 
-  admin: boolean = false;
-  isCustomer: boolean = false;
-  technical: boolean = false;
+ 
 
   name: FormControl = new FormControl(null, Validators.minLength(3));
   email: FormControl = new FormControl(null, Validators.email);
@@ -38,6 +36,11 @@ export class CustomerCreateComponent implements OnInit {
   }
 
   create(): void {
+
+    if (this.customer.profiles.length === 0) {
+      this.toastr.warning('Escolha pelo menos um perfil', 'Aviso');
+      return; 
+    }
     
     this.customer.creationDate = moment().format('DD/MM/YYYY');
 
@@ -55,13 +58,15 @@ export class CustomerCreateComponent implements OnInit {
     });
   }
 
-  addProfile(profile: string): void {
-    const index = this.customer.profiles.indexOf(profile);
-    if (index !== -1) {
-      this.customer.profiles.splice(index, 1);
+  addProfile(profile: any): void {
+
+    
+    if(this.customer.profiles.includes(profile)) {
+      this.customer.profiles.splice(this.customer.profiles.indexOf(profile), 1);
     } else {
       this.customer.profiles.push(profile);
     }
+    
   }
 
   validateFields(): boolean {
