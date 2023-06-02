@@ -23,9 +23,7 @@ export class TechnicalCreateComponent implements OnInit {
     profiles: []
   }
 
-  admin: boolean = false;
-  isTechnical: boolean = false;
-  customer: boolean = false;
+
 
   name: FormControl = new FormControl(null, Validators.minLength(3));
   email: FormControl = new FormControl(null, Validators.email);
@@ -38,6 +36,11 @@ export class TechnicalCreateComponent implements OnInit {
   }
 
   create(): void {
+
+    if (this.technical.profiles.length === 0) {
+      this.toastr.warning('Escolha pelo menos um perfil', 'Aviso');
+      return; 
+    }
     
     this.technical.creationDate = moment().format('DD/MM/YYYY');
 
@@ -55,13 +58,15 @@ export class TechnicalCreateComponent implements OnInit {
     });
   }
 
-  addProfile(profile: string): void {
-    const index = this.technical.profiles.indexOf(profile);
-    if (index !== -1) {
-      this.technical.profiles.splice(index, 1);
+  addProfile(profile: any): void {
+
+    
+    if(this.technical.profiles.includes(profile)) {
+      this.technical.profiles.splice(this.technical.profiles.indexOf(profile), 1);
     } else {
       this.technical.profiles.push(profile);
     }
+    
   }
 
   validateFields(): boolean {

@@ -22,9 +22,7 @@ export class TechnicalUpdateComponent implements OnInit {
     profiles: []
   }
 
-  admin: boolean = false;
-  isTechnical: boolean = false;
-  customer: boolean = false;
+
 
   name: FormControl = new FormControl(null, Validators.minLength(3));
   email: FormControl = new FormControl(null, Validators.email);
@@ -47,31 +45,42 @@ export class TechnicalUpdateComponent implements OnInit {
     })
   }
 
+  
   update(): void {
-    
+    if (this.technical.profiles.length === 0) {
+      this.toastr.warning('Escolha pelo menos um perfil', 'Aviso');
+      return; 
+    }
+  
     this.technical.creationDate = moment().format('DD/MM/YYYY');
-
-    this.service.update(this.technical).subscribe(() => {
-      this.toastr.success('Técnico atualizado com sucesso', 'Atualização');
-      this.router.navigate(['/technicals']);
-    }, ex => {
-      if (ex.error.errors) {
-        ex.error.errors.forEach(element => {
-          this.toastr.error(element.message);
-        });
-      } else {
-        this.toastr.error(ex.error.message);
+  
+    this.service.update(this.technical).subscribe(
+      () => {
+        this.toastr.success('Técnico atualizado com sucesso', 'Atualização');
+        this.router.navigate(['/technicals']);
+      },
+      (ex) => {
+        if (ex.error.errors) {
+          ex.error.errors.forEach((element) => {
+            this.toastr.error(element.message);
+          });
+        } else {
+          this.toastr.error(ex.error.message);
+        }
       }
-    });
+    );
   }
+  
 
-  addProfile(profile: string): void {
-    const index = this.technical.profiles.indexOf(profile);
-    if (index !== -1) {
-      this.technical.profiles.splice(index, 1);
+  addProfile(profile: any): void {
+
+    
+    if(this.technical.profiles.includes(profile)) {
+      this.technical.profiles.splice(this.technical.profiles.indexOf(profile), 1);
     } else {
       this.technical.profiles.push(profile);
     }
+    
   }
 
   validateFields(): boolean {
