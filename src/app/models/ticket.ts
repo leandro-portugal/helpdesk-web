@@ -1,7 +1,6 @@
 export interface Ticket{
     id?:                    any;
-    creationDate?:          string;
-    closingDate?:           string;
+    lastUpdate?:            string;
     title:                  string;
     observation:            string;
     priority:               string;
@@ -10,5 +9,5 @@ export interface Ticket{
     technical:              any;
     customerName:           string;
     technicalName:          string;
-
+  
 }
