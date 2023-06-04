@@ -62,3 +62,8 @@ textarea {
 .icon{
     color: rgb(138,120,232);
 }
+
+.button-section{
+    display: flex;
+    justify-content: flex-end;
+}
