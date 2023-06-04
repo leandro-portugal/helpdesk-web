@@ -22,6 +22,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatIconModule} from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTableModule} from '@angular/material/table';
+import {MatStepperModule} from '@angular/material/stepper';
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -38,6 +39,7 @@ import { CustomerListComponent } from './components/customer/customer-list/custo
 import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
 import { CustomerUpdateComponent } from './components/customer/customer-update/customer-update.component';
 import { TicketListComponent } from './components/ticket/ticket-list/ticket-list.component';
+import { TicketCreateComponent } from './components/ticket/ticket-create/ticket-create.component';
 
 
 
@@ -57,7 +59,8 @@ import { TicketListComponent } from './components/ticket/ticket-list/ticket-list
     CustomerListComponent,
     CustomerDeleteComponent,
     CustomerUpdateComponent,
-    TicketListComponent
+    TicketListComponent,
+    TicketCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +80,7 @@ import { TicketListComponent } from './components/ticket/ticket-list/ticket-list
     MatSidenavModule,
     MatCheckboxModule,
     MatSelectModule,
+    MatStepperModule,
     MatIconModule,
     MatRadioModule,
     MatTableModule,

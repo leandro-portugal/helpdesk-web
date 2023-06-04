@@ -4,7 +4,7 @@
       <input matInput (keyup)="applyFilter($event)" placeholder="Falha na impressora" #input>
     </mat-form-field>
   
-    <button  mat-stroked-button color="primary"><i class="material-icons">post_add</i> Novo Ticket</button>
+    <button  mat-stroked-button color="primary" routerLink ="create"><i class="material-icons">post_add</i> Novo Ticket</button>
       <mat-radio-group color="primary">
         <span>Organizar por status:</span>
           <mat-radio-button (click)="orderByStatus('Aberto')" value="Aberto" >Aberto</mat-radio-button>

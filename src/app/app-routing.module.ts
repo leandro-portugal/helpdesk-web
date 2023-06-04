@@ -13,6 +13,7 @@ import { CustomerCreateComponent } from './components/customer/customer-create/c
 import { CustomerUpdateComponent } from './components/customer/customer-update/customer-update.component';
 import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
 import { TicketListComponent } from './components/ticket/ticket-list/ticket-list.component';
+import { TicketCreateComponent } from './components/ticket/ticket-create/ticket-create.component';
 
 const routes: Routes = [
    {
@@ -32,7 +33,8 @@ const routes: Routes = [
       { path: 'customers/update/:id', component: CustomerUpdateComponent},
       { path: 'customers/delete/:id', component: CustomerDeleteComponent},
 
-      { path: 'tickets', component: TicketListComponent}
+      { path: 'tickets', component: TicketListComponent},
+      { path: 'tickets/create', component: TicketCreateComponent}
     ]
    }
    
