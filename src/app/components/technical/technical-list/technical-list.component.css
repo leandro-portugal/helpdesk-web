@@ -18,6 +18,7 @@ table {
   mat-form-field{
     width: 50%;
     margin-right: 35%;
+    margin-bottom: 3rem;
   }
 
   mat-label{
@@ -26,4 +27,12 @@ table {
 
   button{
     border-radius: .25rem;
+  }
+
+  ng-container, th{
+
+    font-weight: bold;
+    font-size: 1em;
+    min-width: 2rem;
+    
   }
