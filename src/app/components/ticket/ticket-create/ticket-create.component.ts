@@ -106,6 +106,10 @@ export class TicketCreateComponent implements OnInit {
     });
   }
 
+  validateFields(): boolean {
+    return this.priority.valid && this.status.valid && this.title.valid
+       && this.observation.valid && this.technical.valid && this.customer.valid
+  }
 
 }
 

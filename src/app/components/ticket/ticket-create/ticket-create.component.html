@@ -61,7 +61,7 @@
               <textarea [(ngModel)]="ticket.observation" name="observation" [formControl]="observation"  required matInput placeholder="Observações do problema"></textarea>
             </mat-form-field>
             <button routerLink="../" mat-stroked-button color="warn">Cancelar</button>
-            <button (click)="create()" mat-flat-button color="primary">Cadastrar</button>
+            <button (click)="create()" [disabled]="!validateFields()" mat-flat-button color="primary">Cadastrar</button>
           </mat-step>
         </mat-stepper>
         <div class="button-section">
