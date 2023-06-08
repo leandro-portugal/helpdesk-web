@@ -10,26 +10,26 @@
             <ng-template matStepLabel>Informações</ng-template>
             <mat-form-field class="fullWith" appearance="legacy" >
               <mat-label>Título</mat-label>
-              <input formControlName="title" matInput placeholder="Impressora travada" maxlength="64">
+              <input [formControl]="title"  [(ngModel)]="ticket.title"  name="title" matInput placeholder="Impressora travada" maxlength="64">
               <mat-icon class="icon" matSuffix>draw</mat-icon>
             </mat-form-field>
   
             <div class="status-priority-section">
               <mat-form-field class="selection" appearance="legacy">
                 <mat-label>Selecione um status</mat-label>
-                <mat-select formControlName="status">
-                  <mat-option value="Aberto">Aberto</mat-option>
-                  <mat-option value="Em andamento">Em andamento</mat-option>
-                  <mat-option value="Finalizado">Finalizado</mat-option>
+                <mat-select   [(ngModel)]="ticket.status" name="status" [formControl]="status"  required>
+                  <mat-option value="open">Aberto</mat-option>
+                  <mat-option value="progress">Em andamento</mat-option>
+                  <mat-option value="close">Finalizado</mat-option>
                 </mat-select>
               </mat-form-field>
   
               <mat-form-field class="selection" appearance="legacy">
                 <mat-label>Selecione uma prioridade</mat-label>
-                <mat-select formControlName="priority">
-                  <mat-option value="Baixa">Baixa</mat-option>
-                  <mat-option value="Média">Média</mat-option>
-                  <mat-option value="Imediata">Imediata</mat-option>
+                <mat-select [(ngModel)]="ticket.priority" name="priority" [formControl]="priority"  required>
+                  <mat-option value="low">Baixa</mat-option>
+                  <mat-option value="medium">Média</mat-option>
+                  <mat-option value="high">Imediata</mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
@@ -37,7 +37,7 @@
             <div class="technical-selection">
               <mat-form-field class="fullWith" appearance="legacy">
                 <mat-label>Selecione um técnico</mat-label>
-                <mat-select formControlName="technical">
+                <mat-select [(ngModel)]="ticket.technical" name="technical" [formControl]="technical"  required>
                   <mat-option *ngFor="let tech of technicals" value="{{tech.id}}">{{tech.name}}</mat-option>
                 </mat-select>
               </mat-form-field>
@@ -46,7 +46,7 @@
             <div class="customer-selection">
               <mat-form-field class="fullWith" appearance="legacy">
                 <mat-label>Selecione um cliente</mat-label>
-                <mat-select formControlName="customer">
+                <mat-select [(ngModel)]="ticket.customer" name="customer" [formControl]="customer"  required>
                   <mat-option *ngFor="let cust of customers" value="{{cust.id}}">{{cust.name}}</mat-option>
                 </mat-select>
               </mat-form-field>
@@ -58,10 +58,10 @@
             <ng-template matStepLabel>Observações</ng-template>
             <mat-form-field class="fullWith" appearance="legacy">
               <mat-label>Observações</mat-label>
-              <textarea formControlName="observation" matInput placeholder="Observações do problema"></textarea>
+              <textarea [(ngModel)]="ticket.observation" name="observation" [formControl]="observation"  required matInput placeholder="Observações do problema"></textarea>
             </mat-form-field>
             <button routerLink="../" mat-stroked-button color="warn">Cancelar</button>
-            <button  mat-flat-button color="primary">Cadastrar</button>
+            <button (click)="create()" mat-flat-button color="primary">Cadastrar</button>
           </mat-step>
         </mat-stepper>
         <div class="button-section">

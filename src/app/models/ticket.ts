@@ -1,6 +1,7 @@
 export interface Ticket{
+      
     id?:                    any;
-    lastUpdate?:            string;
+    lastUpdate:             any;
     title:                  string;
     observation:            string;
     priority:               string;
