@@ -1,0 +1,69 @@
+.container{
+    width: 80%;
+    margin: 0 auto 1rem;
+    padding: 1rem;
+    border-radius: .25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.div-left {
+    flex: 2;
+    margin: auto;
+  }
+  
+  .div-right {
+    flex: 2;
+    margin: auto;
+  }
+  
+
+.fullWith{
+    width: 100%;
+}
+
+
+img{
+    height: 20rem;
+    width: 20rem;
+
+}
+
+h1{
+    text-align: center;
+    height: 1rem;
+}
+mat-stepper{
+    background: none;
+}
+
+button{
+    margin-bottom: .5rem;
+    margin-right: 1rem;
+    border-radius: .25rem;
+}
+
+textarea {
+    min-height: 5rem;
+    max-height: 12rem
+  }
+  
+.status-priority-section{
+
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.status-priority-section mat-form-field{
+    
+    width: 49%;
+}
+
+.icon{
+    color: rgb(138,120,232);
+}
+
+.button-section{
+    display: flex;
+    justify-content: flex-end;
+}
