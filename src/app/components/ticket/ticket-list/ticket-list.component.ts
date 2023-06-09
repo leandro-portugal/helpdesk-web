@@ -108,4 +108,8 @@ export class TicketListComponent implements OnInit {
     this.dataSource = new MatTableDataSource<Ticket>(list);
     this.dataSource.paginator = this.paginator;
   }
+  clearFilters(): void {
+    this.findAll();
+  }
+  
 }
