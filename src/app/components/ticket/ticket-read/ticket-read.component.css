@@ -1,0 +1,71 @@
+.container{
+    width: 80%;
+    margin: 0 auto 1rem;
+    padding: 1rem;
+    border-radius: .25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    height: 20rem;
+    width: 20rem;
+
+}
+
+
+.div-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  
+}
+
+.fullWith {
+  width: 100%;
+  text-align: center;
+}
+
+.item-details {
+  margin-bottom: 20px;
+}
+
+.item-title {
+  font-weight: bold;
+}
+
+.item-value {
+  margin-left: 10px;
+}
+
+.status-priority {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.status-priority-item {
+  margin-right: 20px;
+}
+
+.observations-section {
+  margin-bottom: 20px;
+}
+
+.item-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 10px;
+}

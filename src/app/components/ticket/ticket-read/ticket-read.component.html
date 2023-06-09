@@ -1,0 +1,46 @@
+<div class="container mat-elevation-z4">
+    <div class="div-left">
+      <h1 class="fullWith">Visualização de ticket</h1>
+      <img class="fullWith" src="assets/img/view-ticket.svg" alt="Read ticket">
+    </div>
+    <div class="div-right">
+      <div class="item-details">
+        <span class="item-title">Título</span>
+        <span class="item-value">{{ ticket.title }}</span>
+  
+        <div class="status-priority">
+          <div class="status-priority-item">
+            <span class="item-title">Status</span>
+            <span class="item-value">{{ ticket.status }}</span>
+          </div>
+          <div class="status-priority-item">
+            <span class="item-title">Prioridade</span>
+            <span class="item-value">{{ ticket.priority }}</span>
+          </div>
+          <div class="status-priority-item">
+            <span class="item-title">Atualização</span>
+            <span class="item-value">{{ ticket.lastUpdate }}</span>
+          </div>
+        </div>
+  
+        <div class="item-section">
+          <span class="item-title">Técnico</span>
+          <span class="item-value">{{ ticket.technicalName }}</span>
+        </div>
+  
+        <div class="item-section">
+          <span class="item-title">Cliente</span>
+          <span class="item-value">{{ ticket.customerName }}</span>
+        </div>
+  
+      </div>
+  
+      <div class="observations-section">
+        <h2>Observações</h2>
+        <p>{{ ticket.observation }}</p>
+      </div>
+  
+      <button routerLink="../../" mat-stroked-button color="primary">Retornar</button>
+    </div>
+  </div>
+  

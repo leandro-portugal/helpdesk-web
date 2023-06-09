@@ -52,7 +52,7 @@ export class TicketCreateComponent implements OnInit {
     private ticketService: TicketsService, private toastr: ToastrService) {}
 
   ngOnInit(): void {
-    this.router.navigate(['tickets/create']);
+   
     this.findAllCustomers();
     this.findAllTechnicals();
     this.firstFormGroup = this.createFirstFormGroup();
