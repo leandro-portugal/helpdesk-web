@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
 import { Customer } from 'src/app/models/customer';
 import { Technical } from 'src/app/models/technical';
@@ -17,7 +18,7 @@ import { TicketsService } from 'src/app/services/tickets.service';
 export class TicketUpdateComponent implements OnInit {
 
   ticket: Ticket = {
-
+    id: '',
     title: '',
     observation: '',
     priority: '',
@@ -27,8 +28,8 @@ export class TicketUpdateComponent implements OnInit {
     customerName: '',
     technicalName: '',
     lastUpdate: ''
-  }
-
+  };
+  
 
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -46,13 +47,16 @@ export class TicketUpdateComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private router: Router,
     private customerService: CustomerService, private technicalService: TechnicalService, 
-    private ticketService: TicketsService, private toastr: ToastrService) { }
+    private ticketService: TicketsService, private toastr: ToastrService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.ticket.id = this.route.snapshot.paramMap.get('id');
+    this.findById();
     this.findAllCustomers();
     this.findAllTechnicals();
     this.firstFormGroup = this.createFirstFormGroup();
     this.secondFormGroup = this.createSecondFormGroup();
+    
   }
 
   findAllCustomers(): void{
@@ -67,6 +71,28 @@ export class TicketUpdateComponent implements OnInit {
     })
 
   }
+  findById(): void{
+      this.ticketService.findById(this.ticket.id).subscribe( response =>{
+        this.ticket = response;
+      }, ex =>{ 
+        this.toastr.error(ex.error.message);})
+  }
+
+  update(): void {
+    this.ticket.lastUpdate = moment().format('DD/MM/YYYY');
+
+  
+    this.ticketService.update(this.ticket).subscribe(
+      response => {
+        this.toastr.success('Ticket atualizado com sucesso', 'Atualização');
+        this.router.navigate(['/tickets']);
+      },
+      ex => {
+        this.toastr.error(ex.error.message);
+      }
+    );
+  }
+  
 
   private createFirstFormGroup(): FormGroup {
     return this.formBuilder.group({
