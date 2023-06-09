@@ -6,18 +6,19 @@
   
     <button  mat-stroked-button color="primary" routerLink ="create"><i class="material-icons">post_add</i> Novo Ticket</button>
       <mat-radio-group color="primary">
-        <span>Organizar por status:</span>
-          <mat-radio-button (click)="orderByStatus('Aberto')" value="Aberto" >Aberto</mat-radio-button>
-          <mat-radio-button (click)="orderByStatus('Em andamento')" value="Em andamento"  >Em andamento</mat-radio-button>
-          <mat-radio-button (click)="orderByStatus('Finalizado')" value="Finalizado" >Finalizado</mat-radio-button>
-    
-          <span>Organizar por prioridade:</span>
-            <mat-radio-button (click)="orderByPriority('Baixa')" value="Baixa" >Baixa</mat-radio-button>
-            <mat-radio-button (click)="orderByPriority('Média')" value="Média"  >Média</mat-radio-button>
-            <mat-radio-button (click)="orderByPriority('Imediata')" value="Imadiata" >Imadiata</mat-radio-button>
-            <span class="clear-filters-text" (click)="clearFilters()">Limpar Filtros</span>
 
-          </mat-radio-group>
+        <span>Organizar por status:</span>
+        <mat-radio-button (click)="orderByStatus('Aberto')" value="Aberto">Aberto</mat-radio-button>
+        <mat-radio-button (click)="orderByStatus('Em andamento')" value="Em andamento">Em andamento</mat-radio-button>
+        <mat-radio-button (click)="orderByStatus('Finalizado')" value="Finalizado">Finalizado</mat-radio-button>
+    
+        <span>Organizar por prioridade:</span>
+        <mat-radio-button (click)="orderByPriority('Baixa')" value="Baixa" >Baixa</mat-radio-button>
+        <mat-radio-button (click)="orderByPriority('Média')" value="Média"  >Média</mat-radio-button>
+        <mat-radio-button (click)="orderByPriority('Imediata')" value="Imadiata" >Imadiata</mat-radio-button>
+        <span class="clear-filters-text" (click)="clearFilters()">Limpar Filtros</span>
+
+      </mat-radio-group>
           
       <div class="mat-elevation-z4">
       

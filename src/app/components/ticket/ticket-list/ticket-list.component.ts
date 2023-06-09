@@ -25,6 +25,7 @@ export class TicketListComponent implements OnInit {
     this.findAll();
   }
 
+  
   findAll(): void{
     this.service.findAll().subscribe(response => {
       this.ELEMENT_DATA = response;
@@ -109,6 +110,7 @@ export class TicketListComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
   clearFilters(): void {
+    
     this.findAll();
   }
   
