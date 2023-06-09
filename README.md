@@ -2,7 +2,9 @@
 
 This is a ticket management system that simulates a simple Help Desk application developed using Angular 12 and Spring Boot 3. The system is deployed in the cloud, with the frontend hosted on the Vercel platform and the backend on Azure. The main objective of this project is to cover the concepts of Single-Page Applications (SPAs), authentication, and authorization using JWT tokens.
 ## Screenshots
-![helpdesk.png](https://www.imagemhost.com.br/images/2023/05/24/helpdesk.png)
+![helpdesk.png](https://i.ibb.co/nzpNqDM/Home.png)
+![helpdesk.png](https://i.ibb.co/64LWYZ6/Ticket-Create.png)
+![helpdesk.png](https://i.ibb.co/PztqXwR/Ticket-List.png)
 
 ## Features
 - User authentication and authorization
